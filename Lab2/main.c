@@ -15,21 +15,17 @@ int main(void)
 {
 	printf("Welcome.\n");
 	char dest[50] = "";
-	//char* pDest = dest;
 	const char string[] = "Bro Code";
-	//const char* pString = string;
-	strcpy_upper(dest, string);
+	strcpy_upper(dest, string); // dest to to samo co &dest[0]
 	printf("Old: %s, new: %s\n", string, dest);
 
 	char dest2[50] = "";
-	char* pDest2 = dest2;
 	const char string2[] = "AABBCDDz";
-	const char* pString2 = string2;
-	strremdup(pDest2, pString2);
+	strremdup(dest2, string2);
 
 	printf("Old: %s, new: %s\n", string2, dest2);
 
-	swap_random(pDest2);
+	swap_random(dest2);
 	printf("Swapped: %s\n", dest2);
 
 	int array[26] = { 0 };
@@ -48,6 +44,7 @@ void strcpy_upper(char* dest, const char* src) {
 	{
 		dest[i] = (char)toupper(src[i]);
 	}
+
 }
 
 void strremdup(char* dest, const char* src) {
@@ -62,7 +59,7 @@ void strremdup(char* dest, const char* src) {
 			dest[dest_write++] = src[i];
 		}
 	}
-
+		
 }
 
 void swap_random(char* src){
